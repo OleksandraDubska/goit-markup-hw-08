@@ -1,0 +1,101 @@
+.team {
+    @extend %section;
+    background-color: var(--secondary-background-color);
+
+    &__title {
+        @extend %title;
+    }
+
+    &__list {
+        @extend %list;
+    }
+
+    &__card {     
+        margin-left: auto;
+        margin-right: auto;  
+        max-width: 450px;    
+        border-radius: 0px 0px 4px 4px;
+
+        background-color: var(--primery-background-color);
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+            0px 1px 1px rgba(0, 0, 0, 0.14),
+            0px 2px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    &__card:not(:last-child) {
+        margin-bottom: 30px;
+    }
+
+     &__info {
+        padding-top: 30px;
+        padding-bottom: 24px;
+    }
+
+    &__name {
+        margin-bottom: 10px;
+
+        text-align: center;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.19;
+        letter-spacing: 0.03em;
+    }
+
+    &__work {
+        margin-bottom: 16px;
+
+        text-align: center;
+        font-size: 16px;
+        line-height: 1.19;
+        letter-spacing: 0.03em;
+
+        color: var(--secondary-text-color);
+    }
+}
+
+// @extend %section;
+// background-color: var(--secondary-background-color);
+
+// &__title {
+//     @extend %title;
+// }
+
+// &__list {
+//     @extend %list;
+//     @include centeredFlex($main: space-between);
+// }
+
+// &__card {
+//     width: 270px;
+//     border-radius: 0px 0px 4px 4px;
+
+//     background-color: var(--primery-background-color);
+//     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+//         0px 1px 1px rgba(0, 0, 0, 0.14),
+//         0px 2px 1px rgba(0, 0, 0, 0.2);
+// }
+
+// &__info {
+//     padding: 30px 32px;
+// }
+
+// &__name {
+//     margin-bottom: 10px;
+
+//     text-align: center;
+//     font-weight: 500;
+//     font-size: 16px;
+//     line-height: 1.19;
+//     letter-spacing: 0.03em;
+// }
+
+// &__work {
+//     margin-bottom: 16px;
+
+//     text-align: center;
+//     font-size: 16px;
+//     line-height: 1.19;
+//     letter-spacing: 0.03em;
+
+//     color: var(--secondary-text-color);
+// }

@@ -1,0 +1,24 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--primery-text-color);
+    background-color: var(--primery-background-color);
+}
+
+.container {
+    margin: 0 auto;
+    padding-right: 15px;
+    padding-left: 15px;
+
+    @media screen and (min-width: 480px) {
+        width: $mobile;
+    }
+
+    @media screen and (min-width: 768px) {
+        width: $tablet;
+    }
+    
+    @media screen and (min-width: 1200px) {
+        width: $desktop;
+    }
+}
+
