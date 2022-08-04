@@ -114,13 +114,16 @@
 
         color: var(--secondary-text-color);
 
-        // font-size: 14px;
-        // line-height: 1.7;
+       @media screen and (min-width: $desktop) {
+            font-size: 14px;
+            line-height: 1.7;
+        } 
     }
 
     &__link {
+        text-decoration: underline;
         color: var(--accent-color);
-    }
+    }    
 }
 
 .checkbox__field {

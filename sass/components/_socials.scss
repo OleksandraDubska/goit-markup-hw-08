@@ -1,7 +1,6 @@
 .socials {
     margin-left: auto;
-    margin-right: auto;
-    @extend %list;
+    margin-right: auto;    
     
     @include centeredFlex($main: space-between);
     width: 206px;
@@ -13,8 +12,6 @@
 
     &__link {
         @include centeredFlex();
-
-        @extend %link;
 
         width: 100%;
         height: 100%;

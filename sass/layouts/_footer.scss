@@ -21,17 +21,12 @@
         color: var(--white-text-color);
     }
 
-    &__list {
-        @extend %list;
-    }
-
     &__place,
     &__item:not(:last-child) {
         margin-bottom: 9px;
     }
     
-    &__contact {
-        @extend %link;
+    &__contact {    
         color: rgba(255, 255, 255, 0.6);
     }
 

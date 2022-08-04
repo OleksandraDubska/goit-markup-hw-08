@@ -1,160 +1,179 @@
 .header {
-    border-bottom: 1px solid #ececec;    
+    border-bottom: 1px solid #ececec;
 
-    &__box {
-        @include centeredFlex($main: space-between);
-        max-width: 480px;    
-        padding-top: 10px;
-        padding-bottom: 10px;    
-    }        
+    @media screen and (max-width: 767px) {
 
-    &__site-nav {        
-        @extend %list;
+        &__box {
+            @include centeredFlex($main: space-between);
+            max-width: 480px;    
+            padding-top: 10px;
+            padding-bottom: 10px;    
+        }        
 
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
+        &__site-nav {           
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        &__link {
+            display: block;
+
+            font-weight: 500;
+            font-size: 40px;
+            line-height: 1.18;
+            letter-spacing: 0.02em;
+
+            transition: color var(--duration) var(--timing-function);
+        }
+
+        &__link:hover,
+        &__link:focus,
+        &__link--current {
+            color: var(--accent-color);
+        }
+
+        &__contact-list {
+            margin-bottom: 64px;    
+
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 32px;
+        }
+
+    
+        &__tel {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+
+            font-weight: 500;
+            font-size: 34px;
+            line-height: 1.25;
+            letter-spacing: 0.02em;
+
+            color: var(--accent-color);
+        }
+
+        &__mail {        
+            display: block;
+            text-decoration: none;
+            color: inherit;
+
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 1.17;
+            letter-spacing: 0.02em;
+
+            color: var(--secondary-text-color);
+        }
+        
+        &__icon-tablet,
+        &__icon-desktop {
+         display: none;
+        }
+    }    
+
+    @media screen and (min-width: $tablet) {
+        &__box {
+            @include centeredFlex($main: space-between);
+        }
+
+        &__site-nav {
+            display: flex;
+            gap: 50px;
+        }
+
+        &__link {
+            position: relative;
+            display: block;
+            padding-top: 32px;
+            padding-bottom: 32px;           
+
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.14;
+            letter-spacing: 0.02em;
+
+            transition: color var(--duration) var(--timing-function);
+
+            &--current::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+
+                width: 100%;
+                height: 4px;
+                border-radius: 2px;
+
+                background-color: var(--accent-color);
+            }
+
+            &:hover,
+            &:focus,
+            &--current {
+                color: var(--accent-color);
+            }
+        } 
+        
+        &__contact-list {
+            display: flex;
+            flex-direction: column;
+            align-items: baseline;
+            gap: 10px;
+        }
+
+        &__contact {            
+            @include centeredFlex();            
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 1.17;
+            letter-spacing: 0.02em;
+
+            color: var(--secondary-text-color);
+            transition: color var(--duration) var(--timing-function);
+        }        
+
+        &__contact:hover,
+        &__contact:focus {
+            color: var(--accent-color);
+        } 
+        
+        &__icon-tablet {
+            margin-right: 8px;            
+            fill: currentColor;    
+        }
+        
+        &__icon-desktop {
+            display: none;
+        }
     }
 
-    &__link {
-        display: block;
+    @media screen and (min-width: $desktop) {
+        &__contact-list {
+            flex-direction: row;
+            align-items: center;
+            gap: 30px;
+        }
 
-        @extend %link;
+        &__contact {            
+            padding-top: 32px;
+            padding-bottom: 32px;
 
-        font-weight: 500;
-        font-size: 40px;
-        line-height: 1.18;
-        letter-spacing: 0.02em;
+            font-size: 14px;
+            line-height: 1.14;
+        }
 
-        transition: color var(--duration) var(--timing-function);
-    }
-
-    &__link:hover,
-    &__link:focus,
-    &__link--current {
-        color: var(--accent-color);
-    }
-
-    &__contact-list {
-        margin-bottom: 64px;
-        @extend %list;
-
-        display: flex;
-        flex-direction: column-reverse;
-        gap: 32px;
-    }
-
-    &__tel {
-        display: block;
-        @extend %link;
-
-        font-weight: 500;
-        font-size: 34px;
-        line-height: 1.25;
-        letter-spacing: 0.02em;
-
-        color: var(--accent-color);
-    }
-
-    &__mail {        
-        display: block;
-        @extend %link;
-
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 1.17;
-        letter-spacing: 0.02em;
-
-        color: var(--secondary-text-color);
-    }
-
-    &__contact-icon {
-        display: none;
+        &__icon-desktop {
+            display: block;
+            margin-right: 8px;            
+            fill: currentColor;    
+        }
+        
+        &__icon-tablet {
+            display: none;
+        }
     }
 }
-
-
-
-
-//     &__box {
-//         @include centeredFlex($main: space-between);
-//     }
-
-//     &__nav {
-//         @include centeredFlex();
-//         gap: 94px;
-//     }
-
-//     &__site-nav,
-//     &__contact-list {
-//         @extend %list;
-//         display: flex;
-//         gap: 50px;
-//     }
-
-//     &__contact {
-//         display: block;
-//         padding-top: 32px;
-//         padding-bottom: 32px;
-
-//         @extend %link;
-
-//         font-weight: 500;
-//         font-size: 14px;
-//         line-height: 1.14;
-//         letter-spacing: 0.02em;
-
-//         color: var(--secondary-text-color);
-
-//         transition: color var(--duration) var(--timing-function);
-//     }
-
-//     &__contact {
-//         @include centeredFlex();
-//     }
-
-//     &__contact:hover,
-//     &__contact:focus {
-//         color: var(--accent-color);
-//     }  
-
-//     &__contact-icon {
-//         margin-right: 10px;
-//         fill: currentColor;
-//     }
-// }
-
-// .header__link {
-//     position: relative;
-//     display: block;
-//     padding-top: 32px;
-//     padding-bottom: 32px;
-
-//     @extend %link;
-
-//     font-weight: 500;
-//     font-size: 14px;
-//     line-height: 1.14;
-//     letter-spacing: 0.02em;
-
-//     transition: color var(--duration) var(--timing-function);
-
-//     &--current::after {
-//         content: '';
-//         position: absolute;
-//         left: 0;
-//         bottom: 0;
-
-//         width: 100%;
-//         height: 4px;
-//         border-radius: 2px;
-
-//         background-color: var(--accent-color);
-//     }
-
-//     &:hover,
-//     &:focus,
-//     &--current {
-//         color: var(--accent-color);
-//     }
 
