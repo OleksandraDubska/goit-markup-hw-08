@@ -1,0 +1,49 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--primery-text-color);
+    background-color: var(--primery-background-color);
+}
+
+.container {
+    margin: 0 auto;
+    padding-right: 15px;
+    padding-left: 15px;
+
+    @media screen and (min-width: $mobile) {
+        width: 480px;
+    }
+
+    @media screen and (min-width: $tablet) {
+        width: 768px;
+    }
+    
+    @media screen and (min-width: $desktop) {
+        width: 1200px;
+    }
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
