@@ -14,17 +14,19 @@
             display: flex;
             flex-direction: column;
             gap: 32px;
+            
+            margin-bottom: 32px;
         }
 
         &__link {
-            display: block;
+            display: block;            
 
             font-weight: 500;
             font-size: 40px;
             line-height: 1.18;
             letter-spacing: 0.02em;
 
-            transition: color var(--duration) var(--timing-function);
+            transition: color var(--duration) var(--timing-function);  
         }
 
         &__link:hover,

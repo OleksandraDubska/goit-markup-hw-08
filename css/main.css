@@ -297,6 +297,7 @@ a {
     width: 100vw;
     height: 100vh;
     padding: 48px 40px;
+    overflow-y: auto;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -675,6 +676,7 @@ a {
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 32px;
+    margin-bottom: 32px;
   }
   .header__link {
     display: block;
@@ -1184,6 +1186,9 @@ a {
   }
   .features__item:not(:last-child) {
     margin-bottom: 30px;
+  }
+  .features__subtitle {
+    text-align: center;
   }
 }
 .features__image {

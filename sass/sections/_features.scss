@@ -11,6 +11,10 @@
         &__item:not(:last-child) {
             margin-bottom: 30px;
         }
+
+        &__subtitle {
+            text-align: center
+        }
     }    
 
     &__image {
